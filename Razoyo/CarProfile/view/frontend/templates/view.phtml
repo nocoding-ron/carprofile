@@ -1,0 +1,29 @@
+<?php
+/** @var Razoyo\CarProfile\Block\Profile $block */
+
+$car = $block->getCarProfile();
+?>
+<?php if ($car && $car['car_id']): ?>
+    <div>
+        <div class="carDetails">
+            <img src="<?= $car['image'] ?>" />
+            <div class="descriptions">
+                <h4>Car Details</h4>
+                <ul>
+                    <li><b>Make:</b> <?= $car['make'] ?></li>
+                    <li><b>Model:</b> <?= $car['model'] ?></li>
+                    <li><b>Year:</b> <?= $car['year'] ?></li>
+                    <li><b>Price:</b> <?= number_format($car['price'],2) ?></li>
+                    <li><b>Seats:</b> <?= $car['seats'] ?></li>
+                    <li><b>Mpg:</b> <?= $car['mpg'] ?></li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center">
+            <a href="/carprofile/index/index" class="action primary">Change Car</a>
+        </div>
+
+    </div>
+<?php else: ?>
+    <p>No car selected.</p>
+<?php endif; ?>

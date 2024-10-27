@@ -1,0 +1,99 @@
+.carSearch{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+}
+.search-form{
+    margin: 10px 0 50px;
+}
+.carSearch input[type=text]{
+    max-width: 200px;
+
+}
+
+
+.carListForm p.title{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.carList{
+    display: block;
+    margin-bottom: 30px;
+}
+.carList label{
+    position: relative;
+    cursor: pointer;
+}
+.carList .car{
+    width: 22%;
+    border: 1px solid #333333;
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+}
+.carList .car:hover{
+    border-color: #ff5501;
+}
+.car .details{
+    padding: 10px;
+}
+
+.carList .car:hover .details{
+    background-color: #ff5501;
+}
+.carList input[type=radio]:checked + .car {
+    border-color: #ff5501;
+}
+.carList input[type=radio]:checked + .car .details{
+    background-color: #ff5501;
+}
+.car .details .year{
+    float: right;
+    font-weight: bold;
+    font-style: italic;
+}
+.carList input[type=radio]{
+    position: absolute;
+    top: 0;
+    opacity: 0;
+}
+
+.carDetails{
+    width: 60%;
+    margin: 0 auto 30px;
+    background-color: #f5f5f5;
+}
+.carDetails img{
+    width: 60%;
+    display: inline-block;
+}
+.carDetails .descriptions{
+    width: 38%;
+    display: inline-block;
+    vertical-align: top;
+}
+.carDetails .descriptions ul{
+    padding: 0;
+    margin: 0;
+}
+
+.carDetails .descriptions ul>li{
+    display: block;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    border-bottom: 1px solid #dedede;
+    text-align: right;
+}
+.carDetails .descriptions ul>li b{
+    float: left;
+}
+.carDetails .descriptions h4{
+    text-align: center;
+}

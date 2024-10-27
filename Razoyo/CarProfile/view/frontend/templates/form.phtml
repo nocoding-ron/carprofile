@@ -1,0 +1,40 @@
+<?php
+/** @var Razoyo\CarProfile\Block\CarForm $block */
+
+$carsData = $block->getCars();
+$cars = $carsData['cars'];
+?>
+
+<form class="carSearch" action="" method="get">
+    <label for="search">Searh Car Make:</label>
+    <div class="search-form">
+        <input type="text" placeholder="e.g., Honda, Toyota, Ferrari, Ford" name="search" />
+        <button class="action secondary">Search</button>
+    </div>
+</form>
+
+<?php if($cars): ?>
+    <form class="carListForm" action="<?= $block->getFormAction() ?>" method="post">
+        <p class="title">Select your car:</p>
+        <div class="carList">
+            <?php foreach ( $cars as $car): ?>
+                <label for="<?= $car['id'] ?>">
+                    <input type="radio" name="car_selection" id="<?= $car['id'] ?>" value="<?= $car['id'] ?>">
+                    <div class="car">
+                        <img src="<?= $this->getViewFileUrl('Razoyo_CarProfile::images/car-placeholder.jpg') ?>" />
+                        <div class="details">
+                            <p><?= $car['make'] ?> <?= $car['model'] ?> <span class="year"><?= $car['year'] ?></span></p>
+                        </div>
+
+                    </div>
+                </label>
+            <?php endforeach; ?>
+        </div>
+        <div style="text-align: center">
+            <button type="submit" class="action primary">Save This Car</button>
+        </div>
+    </form>
+
+<?php else: ?>
+    <p>No Cars Fount. Try another maker.</p>
+<?php endif; ?>
